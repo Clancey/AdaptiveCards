@@ -81,17 +81,17 @@ public class ActionRendererRegistration
         LinearLayout actionButtonsLayout = new LinearLayout(context);
         actionButtonsLayout.setTag(tag);
         actionButtonsLayout.setLayoutParams(new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT));
-        int alignment = hostConfig.getActions().getActionAlignment().swigValue();
-        if (alignment == ActionAlignment.Right.swigValue())
+        ActionAlignment alignment = hostConfig.getActions().getActionAlignment();
+        if (alignment == ActionAlignment.Right)
         {
             actionButtonsLayout.setGravity(Gravity.RIGHT);
         }
-        else if (alignment == ActionAlignment.Center.swigValue())
+        else if (alignment == ActionAlignment.Center)
         {
             actionButtonsLayout.setGravity(Gravity.CENTER_HORIZONTAL);
         }
 
-        if (hostConfig.getActions().getActionsOrientation().swigValue() == ActionsOrientation.Vertical.swigValue())
+        if (hostConfig.getActions().getActionsOrientation() == ActionsOrientation.Vertical)
         {
             actionButtonsLayout.setOrientation(LinearLayout.VERTICAL);
         }

@@ -179,12 +179,12 @@ public class ChoiceSetInputRenderer extends BaseCardElementRenderer
         }
         else
         {
-            if (choiceSetInput.GetChoiceSetStyle().swigValue() == ChoiceSetStyle.Expanded.swigValue())
+            if (choiceSetInput.GetChoiceSetStyle() == ChoiceSetStyle.Expanded)
             {
                 // Create radio button group
                 view = renderRadioGroup(context, choiceSetInput, inputActionHandlerList, hostConfig);
             }
-            else if (choiceSetInput.GetChoiceSetStyle().swigValue() == ChoiceSetStyle.Compact.swigValue())
+            else if (choiceSetInput.GetChoiceSetStyle() == ChoiceSetStyle.Compact)
             {
                 // create ComboBox (Spinner)
                 view = renderComboBox(context, choiceSetInput, inputActionHandlerList, hostConfig);

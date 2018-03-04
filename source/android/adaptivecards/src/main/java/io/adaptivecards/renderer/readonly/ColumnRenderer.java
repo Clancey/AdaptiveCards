@@ -62,13 +62,13 @@ public class ColumnRenderer extends BaseCardElementRenderer
         LinearLayout.LayoutParams layoutParams;
         setSpacingAndSeparator(context, viewGroup, column.GetSpacing(), column.GetSeparator(), hostConfig, false);
 
-        ContainerStyle styleForThis = column.GetStyle().swigValue() == ContainerStyle.None.swigValue() ? containerStyle : column.GetStyle();
+        ContainerStyle styleForThis = column.GetStyle() == ContainerStyle.None ? containerStyle : column.GetStyle();
         View returnedView = CardRendererRegistration.getInstance().render(context, fragmentManager, null, column, column.GetItems(), inputActionHandlerList, cardActionHandler, hostConfig, styleForThis);
-        if (styleForThis.swigValue() != containerStyle.swigValue())
+        if (styleForThis != containerStyle)
         {
             int padding = Util.dpToPixels(context, hostConfig.getSpacing().getPaddingSpacing());
             returnedView.setPadding(padding, padding, padding, padding);
-            String color = styleForThis.swigValue() == containerStyle.Emphasis.swigValue() ?
+            String color = styleForThis == containerStyle.Emphasis ?
                     hostConfig.getContainerStyles().getEmphasisPalette().getBackgroundColor() :
                     hostConfig.getContainerStyles().getDefaultPalette().getBackgroundColor();
             returnedView.setBackgroundColor(Color.parseColor(color));
