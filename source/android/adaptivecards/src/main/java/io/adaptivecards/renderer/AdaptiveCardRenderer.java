@@ -49,11 +49,13 @@ public class AdaptiveCardRenderer
     {
         private Context m_context;
         private LinearLayout m_layout;
+        private RenderedAdaptiveCard m_renderedCard;
 
-        public BackgroundImageLoader(Context context, LinearLayout layout)
+        public BackgroundImageLoader(RenderedAdaptiveCard renderedCard, Context context, LinearLayout layout)
         {
             m_context = context;
             m_layout = layout;
+            m_renderedCard = renderedCard;
         }
 
         @Override
@@ -91,6 +93,10 @@ public class AdaptiveCardRenderer
                 BitmapDrawable background = new BitmapDrawable(m_context.getResources(), result.getResult());
                 m_layout.setBackground(background);
                 m_layout.bringChildToFront(m_layout.getChildAt(0));
+            }
+            else
+            {
+                m_renderedCard.addWarning(new AdaptiveWarning(AdaptiveWarning.UNABLE_TO_LOAD_IMAGE, result.getException().getMessage()));
             }
         }
     }
@@ -191,7 +197,7 @@ public class AdaptiveCardRenderer
         String imageUrl = adaptiveCard.GetBackgroundImage();
         if (!imageUrl.isEmpty())
         {
-            BackgroundImageLoader loaderAsync = new BackgroundImageLoader(context, layout);
+            BackgroundImageLoader loaderAsync = new BackgroundImageLoader(renderedCard, context, layout);
             loaderAsync.execute(imageUrl);
         }
 
