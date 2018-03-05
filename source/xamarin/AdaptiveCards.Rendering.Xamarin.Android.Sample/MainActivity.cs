@@ -1,9 +1,9 @@
 ﻿using Android.App;
 using Android.Widget;
 using Android.OS;
-using Com.Microsoft.Adaptivecards.Objectmodel;
-using Com.Microsoft.Adaptivecards.Renderer.Actionhandler;
-using Com.Microsoft.Adaptivecards.Renderer;
+using Io.Adaptivecards.Objectmodel;
+using Io.Adaptivecards.Renderer.Actionhandler;
+using Io.Adaptivecards.Renderer;
 using Android.Support.V4.App;
 using System.Collections.Generic;
 using System.Net.Http;
@@ -76,12 +76,7 @@ namespace AdaptiveCards.Rendering.Xamarin.Android.Sample
             }
         }
 
-        public void OnShowCard(ShowCardAction p0, AdaptiveCard p1)
-        {
-            
-        }
-
-        public void OnAction(BaseActionElement element, IDictionary<string, string> p1)
+        public void OnAction(BaseActionElement element, RenderedAdaptiveCard renderedCard)
         {
             
         }
