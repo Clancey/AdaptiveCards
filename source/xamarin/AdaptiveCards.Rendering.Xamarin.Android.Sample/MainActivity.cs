@@ -1,9 +1,9 @@
 ﻿using Android.App;
 using Android.Widget;
 using Android.OS;
-using Io.Adaptivecards.Objectmodel;
-using Io.Adaptivecards.Renderer.Actionhandler;
-using Io.Adaptivecards.Renderer;
+using IO.Adaptivecards.Objectmodel;
+using IO.Adaptivecards.Renderer.Actionhandler;
+using IO.Adaptivecards.Renderer;
 using Android.Support.V4.App;
 using System.Collections.Generic;
 using System.Net.Http;
