@@ -64,8 +64,8 @@ namespace AdaptiveCards.Rendering.Xamarin.Android.Sample
                 LinearLayout layout = (LinearLayout)FindViewById(Resource.Id.visualAdaptiveCardLayout);
                 layout.RemoveAllViews();
 
-                var view = AdaptiveCardRenderer.Instance.Render(Application.Context, SupportFragmentManager, adaptiveCard, this, new HostConfig());
-                layout.AddView(view);
+                var renderedCard = AdaptiveCardRenderer.Instance.Render(Application.Context, SupportFragmentManager, adaptiveCard, this, new HostConfig());
+                layout.AddView(renderedCard.getView());
             }
             catch (Java.IO.IOException ex)
             {
