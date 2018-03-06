@@ -65,7 +65,7 @@ namespace AdaptiveCards.Rendering.Xamarin.Android.Sample
                 layout.RemoveAllViews();
 
                 var renderedCard = AdaptiveCardRenderer.Instance.Render(Application.Context, SupportFragmentManager, adaptiveCard, this, new HostConfig());
-                layout.AddView(renderedCard.getView());
+                layout.AddView(renderedCard.GetView());
             }
             catch (Java.IO.IOException ex)
             {
