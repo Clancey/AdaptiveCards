@@ -74,7 +74,7 @@
   <ItemGroup>
     <None Include="Additions\AboutAdditions.txt" />
     <None Include="Jars\AboutJars.txt" />
-    <LibraryProjectZip Include="Jars\adaptivecards-debug.aar" />
+    <LibraryProjectZip Include="../../android/adaptivecards/build/outputs/aar/adaptivecards-debug.aar" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
